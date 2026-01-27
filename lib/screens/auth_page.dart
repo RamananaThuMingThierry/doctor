@@ -1,4 +1,5 @@
 import 'package:doctor/components/login_form.dart';
+import 'package:doctor/components/social_button.dart';
 import 'package:doctor/utils/config.dart';
 import 'package:doctor/utils/text.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,9 @@ class AuthPage extends StatefulWidget{
 class _AuthPageState extends State<AuthPage>{
   @override
   Widget build(BuildContext context){
+
+    Config.init(context);
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(
@@ -41,7 +45,7 @@ class _AuthPageState extends State<AuthPage>{
                 ),
               ),
               Config.spaceSmall,
-              LoginForm(),
+              const LoginForm(),
               Config.spaceSmall,
               Center(
                 child: TextButton(child: Text(
@@ -53,8 +57,41 @@ class _AuthPageState extends State<AuthPage>{
                     )
                   ),
                 onPressed: () => {},),
-              )
-            ]),
+              ),
+              const Spacer(),
+              Center(
+                child: Text(
+                  AppText.enText['social-login']!,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey,
+                    fontWeight: FontWeight.normal
+                  ),
+                ),
+              ),
+              Config.spaceSmall,
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SocialButton(social: 'google'),
+                  SocialButton(social: 'facebook'),
+                ],),
+              Config.spaceSmall,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    AppText.enText['signUp_text']!,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.grey
+                    ),
+                  ),
+                  const SizedBox(width: 2,),
+                  TextButton(onPressed: (){}, child: const Text('Sign Up', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),))
+                ])
+          ],)  
         ),
       ),
     );

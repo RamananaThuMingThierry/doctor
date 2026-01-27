@@ -8,7 +8,8 @@ class Config{
   static double? screenHeight;
 
   // width and height initialization
-  void init(BuildContext context){
+  
+  static void init(BuildContext context){
     mediaQueryData = MediaQuery.of(context);
     screenWidth = mediaQueryData!.size.width;
     screenHeight = mediaQueryData!.size.height;
