@@ -1,5 +1,6 @@
 import 'package:doctor/main_layout.dart';
 import 'package:doctor/screens/auth_page.dart';
+import 'package:doctor/screens/doctor_details.dart';
 import 'package:doctor/utils/Config.dart';
 import 'package:flutter/material.dart';
 
@@ -48,7 +49,8 @@ class MyApp extends StatelessWidget {
         '/': (context) => const AuthPage(),
 
         // This is for main layout after login
-        'main': (context) => const MainLayout()
+        'main': (context) => const MainLayout(),
+        'doc_details': (context) => const DoctorDetails(),
       },
     );
   }

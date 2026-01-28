@@ -1,5 +1,6 @@
 import 'package:doctor/components/login_form.dart';
 import 'package:doctor/components/social_button.dart';
+import 'package:doctor/main_layout.dart';
 import 'package:doctor/utils/config.dart';
 import 'package:doctor/utils/text.dart';
 import 'package:flutter/material.dart';
@@ -89,7 +90,8 @@ class _AuthPageState extends State<AuthPage>{
                     ),
                   ),
                   const SizedBox(width: 2,),
-                  TextButton(onPressed: (){}, child: const Text('Sign Up', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),))
+                  TextButton(onPressed: (){
+                  }, child: const Text('Sign Up', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),))
                 ])
           ],)  
         ),
